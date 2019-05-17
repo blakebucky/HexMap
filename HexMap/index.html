@@ -11,7 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
   <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.min.js'></script>
   <script src="https://unpkg.com/@asymmetrik/leaflet-d3@4/dist/leaflet-d3.js" charset="utf-8"></script>
-  <link rel="stylesheet" type="text/css" href="result-light.css">
+  <link rel="stylesheet" type="text/css" href="css/result-light.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
     <style>
         html,
@@ -98,6 +98,12 @@ var hexLayer = L.hexbinLayer(options).addTo(mymap)
 				]
 			}));
 
+      var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
+      var legendEntries = [ "Lowest count", 'Lower', 'Medium', 'Higher', 'Max count' ];
+      var colorScale = d3.scaleLinear().domain([ 0, 2, 4, 6, 8 ]).range(colorRange);
+      		var legend = d3.select('.legend').selectAll('.legend-entry').data(hexLayer).enter().append('div').attr('class', 'legend-entry');
+      		legend.append('div').attr('class', 'color-tile').style('background-color', function(d, i) { return colorScale(i); });
+      		legend.append('div').attr('class', 'description').text(function(d) { return d; });
 
 hexLayer
   .radiusRange([6, 11])
