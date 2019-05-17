@@ -5,9 +5,15 @@
   <title>US Superfund Site Hexagonal Map</title>
 
   <script type="text/javascript" src="https://cloudybay.github.io/leaflet.latlng-graticule/leaflet.latlng-graticule.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+  <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.min.js'></script>
+  <script src="https://unpkg.com/@asymmetrik/leaflet-d3@4/dist/leaflet-d3.js" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="result-light.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
-  <style>
+    <style>
         html,
         body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
         i {
@@ -18,9 +24,9 @@
           opacity: 0.7;
         }
 
-  </style>
+    </style>
 
- <style>
+<style>
 
    .hexbin-hexagon {
       stroke: #000;
@@ -32,16 +38,16 @@
   		stroke-width: 5px;
   		stroke-opacity: 1;
   	}
-   .hexbin-tooltip {
+  	.hexbin-tooltip {
   		padding: 8px;
   		border-radius: 4px;
   		border: 1px solid black;
   		background-color: white;
   	}
-   .color-tile {
+    .color-tile {
 		float: left; width: 14px; height: 14px;
 	}
-   .description {
+	.description {
 		margin-left: 20px;
 		font: 14px sans-serif;
 	}
@@ -51,21 +57,18 @@
 </head>
 <body>
 
-  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-  <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
-  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.min.js'></script>
-  <script src="https://unpkg.com/@asymmetrik/leaflet-d3@4/dist/leaflet-d3.js" charset="utf-8"></script>
+
+  <div class="legend"></div>
+  <br/>
 
   <div id="map"></div>
-  <div class="legend"></div>
+
 
 
 <script>
 
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
-var legendEntries = [ "Lowest count", '25%', '50%', '75%', 'Max count' ];
+var legendEntries = [ "Lowest count", 'Lower', 'Medium', 'Higher', 'Max count' ];
 var colorScale = d3.scaleLinear().domain([ 0, 2, 4, 6, 8 ]).range(colorRange);
 		var legend = d3.select('.legend').selectAll('.legend-entry').data(legendEntries).enter().append('div').attr('class', 'legend-entry');
 		legend.append('div').attr('class', 'color-tile').style('background-color', function(d, i) { return colorScale(i); });
@@ -88,7 +91,7 @@ var options = {
 };
 
 var hexLayer = L.hexbinLayer(options).addTo(mymap)
-   .hoverHandler(L.HexbinHoverHandler.compound({
+.hoverHandler(L.HexbinHoverHandler.compound({
 				handlers: [
 					L.HexbinHoverHandler.resizeFill(),
 					L.HexbinHoverHandler.tooltip()
