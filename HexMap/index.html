@@ -85,23 +85,29 @@
 
 //Making function for legend colors
 function getColor(d) {
-return d > 5 ? '#FFFF00':
-d > 3 ? '#0000FF':
-d > 2 ? '#FF0000':
-d > 1 ? 'FFA500':
-d > 0 ? 'FFFF00':
-'FFFF00';
+return d > 5 ? '#800026':
+d == 3 ? '#800026':
+d == 2 ? '#800026':
+d == 1 ? '#800026':
+d > 0 ? '#800026':
+'#FFFF00';
 }
 
 //Setting colors for hexagons
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
-var colorScale = d3.scaleLinear().domain([0,1,2,3,4,5]).range(colorRange);
+var colorScale = d3.scaleLinear().domain([0,1,2,3,5]).range(colorRange);
+
+//Setting map center
 
 var center = [39.8, -98.5];
+
+//Setting tilelayer
 
 var osmUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     osmAttrib = '  Map tiles by Carto, under CC BY 3.0. Data by &copy <a href="http://openstreetmap.org/copyright">OpenStreetMap</a>, under ODbL.',
     osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+
+//Making map + setting map options
 
 mymap = new L.Map('map', {layers: [osm], center: new L.LatLng([35.7], [-98]), zoom: 4});
 
@@ -120,20 +126,19 @@ var legend = L.control({position: 'topleft'});
 legend.onAdd = function (mymap) {
 
 var div = L.DomUtil.create('div', 'info legend'),
-    grades = ['Lowest Density','Lower Density','Medium Density','Higher Density','Highest Density'],
-    labels = [];
+    grades = [0,1,2,3,5],
+    labels = [],
+    from, to;
 for (var i = 0; i < grades.length; i++) {
     div.innerHTML +=
-          '<i style=”background:' + getColor(grades[i] + 1) + '"></i> ' +
+          '<i style=”background:' + getColor(grades[i]) + '"></i> ' +
           grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
 }
 return div;
 };
-
 legend.addTo(mymap);
 
 //info box//
-
 
 var info = L.control();
 
@@ -143,9 +148,11 @@ info.onAdd = function (mymap) {
     return this._div;
 };
 info.update = function (props) {
-    this._div.innerHTML = '<h4>U.S. Superfund Site Hexagonal Map</h4>' + 'Superfund sites are locations in the U.S. with extensive </br> environmental contamination that the federal government </br> has designated for cleanup fund allocation.'};
+    this._div.innerHTML = '<h3>U.S. Superfund Site Hexagonal Map</h3>' + '<h4>Superfund sites are locations in the U.S. with extensive </br> environmental contamination that the federal government </br> has designated for cleanup fund allocation.</h4>' + 'Data Source: U.S. Department of Commerce - NOAA'};
 info.addTo(mymap);
 
+
+//Adding hexlayer
 
 var hexLayer = L.hexbinLayer(options).addTo(mymap)
 .hoverHandler(L.HexbinHoverHandler.compound({
@@ -164,6 +171,8 @@ hexLayer
 
 var latFn = d3.randomNormal(center[0]);
 var longFn = d3.randomNormal(center[1]);
+
+//Defining the points
 
 var pointData = function(){
     var data = [];
