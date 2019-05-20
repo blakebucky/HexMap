@@ -13,6 +13,7 @@
   <script src="https://unpkg.com/@asymmetrik/leaflet-d3@4/dist/leaflet-d3.js" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="css/result-light.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
+
     <style>
         html,
         body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
@@ -34,7 +35,7 @@
     }
    .hexbin-container:hover .hexbin-hexagon {
   		transition: 200ms;
-  		stroke: orange;
+  		stroke: limegreen;
   		stroke-width: 5px;
   		stroke-opacity: 1;
   	}
@@ -45,34 +46,56 @@
   		background-color: white;
   	}
     .color-tile {
-		float: left; width: 14px; height: 14px;
-	}
-	.description {
-		margin-left: 20px;
-		font: 14px sans-serif;
-	}
+	  	float: left; width: 14px; height: 14px;
+    }
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    .info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+    .legend {
+      background-color: "black";
+      line-height: 25px;
+      color: #555;
+      width: auto;
+    }
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
 
 </style>
 
 </head>
 <body>
 
-
-  <div class="legend"></div>
-  <br/>
-
-  <div id="map"></div>
-
-
+<div id="map"></div>
 
 <script>
 
+//Making function for legend colors
+function getColor(d) {
+return d > 5 ? '#FFFF00':
+d > 3 ? '#0000FF':
+d > 2 ? '#FF0000':
+d > 1 ? 'FFA500':
+d > 0 ? 'FFFF00':
+'FFFF00';
+}
+
+//Setting colors for hexagons
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
-var legendEntries = [ "Lowest count", 'Lower', 'Medium', 'Higher', 'Max count' ];
-var colorScale = d3.scaleLinear().domain([ 0, 2, 4, 6, 8 ]).range(colorRange);
-		var legend = d3.select('.legend').selectAll('.legend-entry').data(legendEntries).enter().append('div').attr('class', 'legend-entry');
-		legend.append('div').attr('class', 'color-tile').style('background-color', function(d, i) { return colorScale(i); });
-		legend.append('div').attr('class', 'description').text(function(d) { return d; });
+var colorScale = d3.scaleLinear().domain([0,1,2,3,4,5]).range(colorRange);
 
 var center = [39.8, -98.5];
 
@@ -87,8 +110,42 @@ var options = {
     opacity: 0.5,
     duration: 500,
     colorRange: colorRange,
-    colorScaleExtent: [1, 6]
+    colorScaleExtent: [0, 6]
 };
+
+//Legend//
+
+var legend = L.control({position: 'topleft'});
+
+legend.onAdd = function (mymap) {
+
+var div = L.DomUtil.create('div', 'info legend'),
+    grades = ['Lowest Density','Lower Density','Medium Density','Higher Density','Highest Density'],
+    labels = [];
+for (var i = 0; i < grades.length; i++) {
+    div.innerHTML +=
+          '<i style=”background:' + getColor(grades[i] + 1) + '"></i> ' +
+          grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+}
+return div;
+};
+
+legend.addTo(mymap);
+
+//info box//
+
+
+var info = L.control();
+
+info.onAdd = function (mymap) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+info.update = function (props) {
+    this._div.innerHTML = '<h4>U.S. Superfund Site Hexagonal Map</h4>' + 'Superfund sites are locations in the U.S. with extensive </br> environmental contamination that the federal government </br> has designated for cleanup fund allocation'};
+info.addTo(mymap);
+
 
 var hexLayer = L.hexbinLayer(options).addTo(mymap)
 .hoverHandler(L.HexbinHoverHandler.compound({
@@ -97,13 +154,6 @@ var hexLayer = L.hexbinLayer(options).addTo(mymap)
 					L.HexbinHoverHandler.tooltip()
 				]
 			}));
-
-      var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
-      var legendEntries = [ "Lowest count", 'Lower', 'Medium', 'Higher', 'Max count' ];
-      var colorScale = d3.scaleLinear().domain([ 0, 2, 4, 6, 8 ]).range(colorRange);
-      		var legend = d3.select('.legend').selectAll('.legend-entry').data(hexLayer).enter().append('div').attr('class', 'legend-entry');
-      		legend.append('div').attr('class', 'color-tile').style('background-color', function(d, i) { return colorScale(i); });
-      		legend.append('div').attr('class', 'description').text(function(d) { return d; });
 
 hexLayer
   .radiusRange([6, 11])
