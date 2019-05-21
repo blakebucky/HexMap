@@ -87,15 +87,16 @@ mymap = new L.Map('map', {layers: [osm], center: new L.LatLng([35.7], [-98]), zo
 Creating Hexbins, Adding them to Map, + Applying Options to Hexbins on Map
 ```javascript
 var hexLayer = L.hexbinLayer(options).addTo(mymap)
-.hoverHandler(L.HexbinHoverHandler.compound({  //Applying hovering
+	.hoverHandler(L.HexbinHoverHandler.compound({  //Applying hovering
 				handlers: [
 					L.HexbinHoverHandler.resizeFill(),
 					L.HexbinHoverHandler.tooltip() 
 				]
 			}));
 hexLayer
-  .radiusRange([6, 11])  //Setting range of values of hexagon radii
+	.radiusRange([6, 11])  //Setting range of values of hexagon radii
 	.lng(function(d) { return d[0]; })  //Setting longitude for each hex
-  .lat(function(d) { return d[1]; })  //Setting latitude for each hex
-  .colorValue(function(d) { return d.length; })  //Setting color for each hex
-  .radiusValue(function(d) { return d.length; });  //Setting radius for each hex
+	.lat(function(d) { return d[1]; })  //Setting latitude for each hex
+	.colorValue(function(d) { return d.length; })  //Setting color for each hex
+	.radiusValue(function(d) { return d.length; });  //Setting radius for each hex
+```
