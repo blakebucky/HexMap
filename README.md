@@ -66,7 +66,6 @@ Setting Info Box + Legend
 ```
 Setting Colors, Range, and Options for Hexagons
 ```javascript
-<script>
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
 var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
 var options = {
@@ -76,7 +75,6 @@ var options = {
     colorRange: colorRange,
     colorScaleExtent: [1, 5]
    };
-</script> //Closed script here only for aesthetics :) continues in next section
 ```
 Setting Map Center, Tilelayer, and Creating Map
 ```javascript
@@ -84,7 +82,6 @@ var center = [39.8, -98.5]; //Map Center
 var osmUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     osmAttrib = '  Map tiles by Carto, under CC BY 3.0. Data by &copy <a href="http://openstreetmap.org/copyright">OpenStreetMap</a>,     under ODbL.',
     osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib}); //Tilelayer
-//Making map + setting map options
-mymap = new L.Map('map', {layers: [osm], center: new L.LatLng([35.7], [-98]), zoom: 4}); //
+mymap = new L.Map('map', {layers: [osm], center: new L.LatLng([35.7], [-98]), zoom: 4}); // Creating map
 ```
 
