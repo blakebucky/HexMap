@@ -6,6 +6,7 @@
 
 ##### Styling
 
+Map placeholder
 >    <style> </br>
 >       html,</br>
 >       body, #map { width: 100%; height: 100%; margin: 0; background: #fff}</br>
@@ -16,3 +17,21 @@
 >         opacity: 0.7;</br>
 >       }</br>
 >     </style></br>
+
+Setting Hexagons + Hover/Tooltips
+>   .hexbin-hexagon {</br>
+>      stroke: #000;</br>
+>      stroke-width: 1px;</br>
+>    }</br>
+>   .hexbin-container:hover .hexbin-hexagon {</br>
+>  		transition: 200ms;</br>
+>  		stroke: limegreen;</br>
+>  		stroke-width: 5px;</br>
+>  		stroke-opacity: 1;</br>
+>  	}</br>
+>  	.hexbin-tooltip {</br>
+>  		padding: 8px;</br>
+>  		border-radius: 4px;</br>
+>  		border: 1px solid black;</br>
+>  		background-color: white;</br>
+>  	}</br>
