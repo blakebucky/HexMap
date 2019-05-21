@@ -8,7 +8,7 @@
 
 Map placeholder
 
-```html
+```
   <style> 
     html,
     body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
@@ -23,7 +23,7 @@ Map placeholder
 ```
 
 Setting Hexagons + Hover/Tooltips
-```html
+```
    .hexbin-hexagon 
       stroke: #000;
       stroke-width: 1px;
