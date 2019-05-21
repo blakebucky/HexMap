@@ -64,3 +64,11 @@ Setting Info Box + Legend
       opacity: 0.7;
     }
 ```
+Setting Colors and Range for Hexagons
+``javascript
+<script>
+//Setting colors for hexagons
+var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
+var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
+</script>
+``
