@@ -76,6 +76,6 @@ var options = {
     colorRange: colorRange,
     colorScaleExtent: [1, 5]
    };
-</script>
+</script> //Closed script here only for aesthetics :)
 ```
 
