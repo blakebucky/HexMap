@@ -147,7 +147,7 @@ Creating Info Box
 ```javascript
   var info = L.control();
     info.onAdd = function (mymap) {
-        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        this._div = L.DomUtil.create('div', 'info'); // create a div for info box
         this.update();
         return this._div;
     };
