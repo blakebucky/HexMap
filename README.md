@@ -6,7 +6,7 @@
 
 ##### Styling
 
-Map placeholder
+Map placeholder (HTML)
 
 ```
   <style> 
@@ -21,7 +21,7 @@ Map placeholder
   </style>
   
 ```
-Setting Hexagons + Hover/Tooltips
+Setting Hexagons + Hover/Tooltips (Start of CSS)
 ```
    .hexbin-hexagon { 
       stroke: #000;
@@ -40,7 +40,7 @@ Setting Hexagons + Hover/Tooltips
       background-color: white;
      }
 ```
-Setting Info Box + Legend
+Setting Info Box + Legend (End of CSS)
 ```
     .info {
       padding: 6px 8px;
@@ -64,7 +64,7 @@ Setting Info Box + Legend
       opacity: 0.7;
     }
 ```
-#### 
+#### Javascript
 Setting Colors, Range, + Options for Hexagons
 ```javascript
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
