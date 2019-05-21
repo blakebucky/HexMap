@@ -114,7 +114,7 @@ var pointData = function(){
 pointData();
 ```
 Creating Function to Generate Legend Colors
-``javascript
+```javascript
 function getColor(d) {
         return d === 1  ? "yellow" :
                d === 2  ? "orange" :
