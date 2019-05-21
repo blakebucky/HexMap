@@ -100,3 +100,15 @@ hexLayer
 	.colorValue(function(d) { return d.length; })  //Setting color for each hex
 	.radiusValue(function(d) { return d.length; });  //Setting radius for each hex
 ```
+Defining Superfund Sites via Longitude/Latitude + Calling Data
+```javascript
+var pointData = function(){
+    var data = [];
+    for(i=0; i<1000; i++){
+        data.push([longFn(),  latFn()]);
+    }
+    hexLayer.data([[lat,lon]...[lat,lon]
+    ]);
+};
+pointData();
+```
