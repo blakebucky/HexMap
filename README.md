@@ -7,6 +7,7 @@
 ##### Styling
 
 Map placeholder
+
 <code>
   <style> 
     html,
