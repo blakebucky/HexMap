@@ -65,7 +65,7 @@ Setting Info Box + Legend
     }
 ```
 Setting Colors and Range for Hexagons
-``javascript
+```javascript
 <script>
 //Setting colors for hexagons
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
