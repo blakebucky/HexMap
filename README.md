@@ -95,7 +95,7 @@ var hexLayer = L.hexbinLayer(options).addTo(mymap)
 				]
 			}));
 hexLayer
-	.radiusRange([6, 11])  //Setting range of values of hexagon radii
+	.radiusRange([5, 12])  //Setting range of values of hexagon radii
 	.lng(function(d) { return d[0]; })  //Setting longitude for each hex
 	.lat(function(d) { return d[1]; })  //Setting latitude for each hex
 	.colorValue(function(d) { return d.length; })  //Setting color for each hex
