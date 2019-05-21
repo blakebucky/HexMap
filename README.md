@@ -17,23 +17,23 @@ Map placeholder
        height: 16px;
        float: right;
        opacity: 0.7;
-    }
+      }
   </style>
   
 ```
 Setting Hexagons + Hover/Tooltips
 ```
-   .hexbin-hexagon 
+   .hexbin-hexagon { 
       stroke: #000;
       stroke-width: 1px;
      }
-   .hexbin-container:hover .hexbin-hexagon 
+   .hexbin-container:hover .hexbin-hexagon {
       transition: 200ms;
       stroke: limegreen;
       stroke-width: 5px;
       stroke-opacity: 1;
      }
-    .hexbin-tooltip 
+    .hexbin-tooltip {
       padding: 8px;
       border-radius: 4px;
       border: 1px solid black;
