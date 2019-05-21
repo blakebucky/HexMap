@@ -75,7 +75,7 @@ var options = {
     duration: 500,
     colorRange: colorRange,
     colorScaleExtent: [1, 5]
-};
+   };
 </script>
 ```
 
