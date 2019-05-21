@@ -108,8 +108,20 @@ var pointData = function(){
     for(i=0; i<1000; i++){
         data.push([longFn(),  latFn()]);
     }
-    hexLayer.data([[lat1,lon1]...[latN,lonN]
+    hexLayer.data([[lat1,lon1]...[latN,lonN]  //Full lat/lon can be found in index file
     ]);
 };
 pointData();
+```
+Creating Function to Generate Legend Colors
+``javascript
+function getColor(d) {
+        return d === 1  ? "yellow" :
+               d === 2  ? "orange" :
+               d === 3 ? "red" :
+               d === 4 ? "blue" :
+               d >= 5 ? "purple":
+                         "purple"
+                          ;
+    }
 ```
