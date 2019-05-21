@@ -4,4 +4,15 @@
 
 ##### Now, to go through the important portions of the code in the index file:
 
+###### Styling
 
+>    <style>
+>       html,
+>       body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
+>       i {          
+>         width: 0.5px;
+>         height: 16px;
+>         float: right;
+>         opacity: 0.7;
+>       }
+>     </style>
