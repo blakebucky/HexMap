@@ -64,7 +64,7 @@ Setting Info Box + Legend (End of CSS)
       opacity: 0.7;
     }
 ```
-#### Javascript
+#### Javascript/Leaflet
 Setting Colors, Range, + Options for Hexagons
 ```javascript
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
