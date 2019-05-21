@@ -116,12 +116,12 @@ pointData();
 Creating Function to Generate Legend Colors
 ```javascript
 function getColor(d) {
-        return d === 1  ? "yellow" :
-               d === 2  ? "orange" :
+        return d === 1 ? "yellow" :
+               d === 2 ? "orange" :
                d === 3 ? "red" :
                d === 4 ? "blue" :
                d >= 5 ? "purple":
-                         "purple"
+                        "purple"
                           ;
     }
 ```
