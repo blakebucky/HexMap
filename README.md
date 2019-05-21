@@ -64,10 +64,18 @@ Setting Info Box + Legend
       opacity: 0.7;
     }
 ```
-Setting Colors and Range for Hexagons
+Setting Colors, Range, and Options for Hexagons
 ```javascript
 <script>
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
 var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
+var options = {
+    radius : 12, //Hexagon maximum radius
+    opacity: 0.5,
+    duration: 500,
+    colorRange: colorRange,
+    colorScaleExtent: [1, 5]
+};
 </script>
 ```
+
