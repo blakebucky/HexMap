@@ -115,7 +115,7 @@ pointData();
 ```
 Creating Function to Generate Legend Colors
 ```javascript
-function getColor(d) {
+function getColor(d) {   //Categorical colors; can also create function to assign color based on continuous values
         return d === 1 ? "yellow" :
                d === 2 ? "orange" :
                d === 3 ? "red" :
@@ -124,4 +124,22 @@ function getColor(d) {
                         "purple"
                           ;
     }
+```
+Creating Legend + Assigning Categories/Colors
+```javascript
+    var legend = L.control({position: 'bottomleft'});
+        legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+       labels = ['<strong>Superfund Site Density Categories</strong>'],
+       categories = [1,2,3,4,'5 or more sites'];
+       for (var i = 0; i < categories.length; i++) {
+               div.innerHTML +=
+               labels.push(
+                   '<i style="background:' + getColor(categories[i]) + '"></i> ' +
+                   (categories[i] ? categories[i] : '+'));
+           }
+           div.innerHTML = labels.join('<br>');
+       return div;
+    };
+    legend.addTo(mymap);
 ```
