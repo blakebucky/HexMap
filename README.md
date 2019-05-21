@@ -36,8 +36,8 @@ Setting Hexagons + Hover/Tooltips
     .hexbin-tooltip 
       padding: 8px;
       border-radius: 4px;
-  	  border: 1px solid black;
-  	  background-color: white;
+      border: 1px solid black;
+      background-color: white;
   	 }
 ```
 Setting Info Box + Legend
