@@ -129,10 +129,10 @@ Creating Legend + Assigning Categories/Colors
 ```javascript
     var legend = L.control({position: 'bottomleft'});
         legend.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend');
-       labels = ['<strong>Superfund Site Density Categories</strong>'],
-       categories = [1,2,3,4,'5 or more sites'];
-       for (var i = 0; i < categories.length; i++) {
+    var div = L.DomUtil.create('div', 'info legend');  //creating new div for legend
+       labels = ['<strong>Superfund Site Density Categories</strong>'],   //Legend title
+       categories = [1,2,3,4,'5 or more sites'];  //Legend categories
+       for (var i = 0; i < categories.length; i++) {  //for loop assigning colors + categories
                div.innerHTML +=
                labels.push(
                    '<i style="background:' + getColor(categories[i]) + '"></i> ' +
@@ -142,4 +142,16 @@ Creating Legend + Assigning Categories/Colors
        return div;
     };
     legend.addTo(mymap);
+```
+Creating Info Box
+```javascript
+  var info = L.control();
+    info.onAdd = function (mymap) {
+        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        this.update();
+        return this._div;
+    };
+    info.update = function (props) {
+        this._div.innerHTML = '<h3>U.S. Superfund Site Hexagonal Map</h3>' + '<h4>Superfund sites are locations in the U.S. with extensive </br> environmental contamination that the federal government </br> has designated for cleanup fund allocation.</h4>' + 'Data Source: U.S. Department of Commerce - NOAA'};
+    info.addTo(mymap);
 ```
