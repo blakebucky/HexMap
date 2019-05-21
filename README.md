@@ -7,8 +7,8 @@
 ##### Styling
 
 Map placeholder
->  // <style> 
->  //   html,
+>  `<addr>` <style> 
+>  `<addr>`   html,
 >  //   body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
 >  //   i {        
 >  //     width: 0.5px;
