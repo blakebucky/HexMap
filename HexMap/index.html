@@ -2344,7 +2344,7 @@ function getColor(d) {
                d === 2  ? "orange" :
                d === 3 ? "red" :
                d === 4 ? "blue" :
-               d === 5 ? "purple":
+               d >= 5 ? "purple":
                          "purple"
                           ;
     }
@@ -2354,7 +2354,7 @@ function getColor(d) {
         legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
        labels = ['<strong>Superfund Site Density Categories</strong>'],
-       categories = [1,2,3,4,5];
+       categories = [1,2,3,4,'5 or more sites'];
 
        for (var i = 0; i < categories.length; i++) {
                div.innerHTML +=
