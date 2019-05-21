@@ -23,19 +23,21 @@ Map placeholder
 ```
 
 Setting Hexagons + Hover/Tooltips
->   .hexbin-hexagon {</br>
->      stroke: #000;</br>
->      stroke-width: 1px;</br>
->    }</br>
->   .hexbin-container:hover .hexbin-hexagon {</br>
->  		transition: 200ms;</br>
->  		stroke: limegreen;</br>
->  		stroke-width: 5px;</br>
->  		stroke-opacity: 1;</br>
->  	}</br>
->  	.hexbin-tooltip {</br>
->  		padding: 8px;</br>
->  		border-radius: 4px;</br>
->  		border: 1px solid black;</br>
->  		background-color: white;</br>
->  	}</br>
+```html
+>   .hexbin-hexagon 
+>      stroke: #000;
+>      stroke-width: 1px;
+>    }
+>   .hexbin-container:hover .hexbin-hexagon 
+>  		transition: 200ms;
+>  		stroke: limegreen;
+>  		stroke-width: 5px;
+>  		stroke-opacity: 1;
+>  	 }
+>  	.hexbin-tooltip 
+>  		padding: 8px;
+>  		border-radius: 4px;
+>  		border: 1px solid black;
+>  		background-color: white;
+>  	 }
+```
