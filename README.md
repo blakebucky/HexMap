@@ -34,9 +34,9 @@ Setting Hexagons + Hover/Tooltips
       stroke-opacity: 1;
   	 }
   	.hexbin-tooltip 
-  		padding: 8px;
-  		border-radius: 4px;
-  		border: 1px solid black;
-  		background-color: white;
+      padding: 8px;
+      border-radius: 4px;
+  	  border: 1px solid black;
+  	  background-color: white;
   	 }
 ```
