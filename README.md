@@ -7,16 +7,16 @@
 ##### Styling
 
 Map placeholder
->  `<addr>` <style> 
->  `<addr>`   html,
->  //   body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
->  //   i {        
->  //     width: 0.5px;
->  //     height: 16px;
->  //     float: right;
->  //     opacity: 0.7;
->  //   }
->  // </style>
+>   '''javascript <style> 
+>      html,
+>   body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
+>     i {        
+>       width: 0.5px;
+>       height: 16px;
+>       float: right;
+>       opacity: 0.7;
+>     }
+>   </style>'''
 
 Setting Hexagons + Hover/Tooltips
 >   .hexbin-hexagon {</br>
