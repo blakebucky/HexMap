@@ -127,7 +127,7 @@ function getColor(d) {   //Categorical colors; can also create function to assig
 ```
 Creating Legend + Assigning Categories/Colors
 ```javascript
-    var legend = L.control({position: 'bottomleft'});
+    var legend = L.control({position: 'bottomright'});
         legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');  //creating new div for legend
        labels = ['<strong>Superfund Site Density Categories</strong>'],   //Legend title
