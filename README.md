@@ -6,13 +6,13 @@
 
 ###### Styling
 
->    <style>
->       html,
->       body, #map { width: 100%; height: 100%; margin: 0; background: #fff}
->       i {          
->         width: 0.5px;
->         height: 16px;
->         float: right;
->         opacity: 0.7;
->       }
->     </style>
+>    <style> </br>
+>       html,</br>
+>       body, #map { width: 100%; height: 100%; margin: 0; background: #fff}</br>
+>       i {</br>          
+>         width: 0.5px;</br>
+>         height: 16px;</br>
+>         float: right;</br>
+>         opacity: 0.7;</br>
+>       }</br>
+>     </style></br>
