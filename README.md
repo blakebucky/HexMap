@@ -21,7 +21,6 @@ Map placeholder
   </style>
   
 ```
-
 Setting Hexagons + Hover/Tooltips
 ```
    .hexbin-hexagon 
