@@ -64,6 +64,7 @@ Setting Info Box + Legend
       opacity: 0.7;
     }
 ```
+#### 
 Setting Colors, Range, + Options for Hexagons
 ```javascript
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
@@ -107,7 +108,7 @@ var pointData = function(){
     for(i=0; i<1000; i++){
         data.push([longFn(),  latFn()]);
     }
-    hexLayer.data([[lat,lon]...[lat,lon]
+    hexLayer.data([[lat1,lon1]...[latN,lonN]
     ]);
 };
 pointData();
