@@ -28,10 +28,10 @@ Setting Hexagons + Hover/Tooltips
       stroke-width: 1px;
      }
    .hexbin-container:hover .hexbin-hexagon 
-     transition: 200ms;
-     stroke: limegreen;
-     stroke-width: 5px;
-     stroke-opacity: 1;
+      transition: 200ms;
+      stroke: limegreen;
+      stroke-width: 5px;
+      stroke-opacity: 1;
   	 }
   	.hexbin-tooltip 
   		padding: 8px;
