@@ -64,7 +64,7 @@ Setting Info Box + Legend
       opacity: 0.7;
     }
 ```
-Setting Colors, Range, and Options for Hexagons
+Setting Colors, Range, + Options for Hexagons
 ```javascript
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
 var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
@@ -76,7 +76,7 @@ var options = {
     colorScaleExtent: [1, 5]
    };
 ```
-Setting Map Center, Tilelayer, and Creating Map
+Setting Map Center, Tilelayer, + Creating Map
 ```javascript
 var center = [39.8, -98.5]; //Map Center
 var osmUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
@@ -84,4 +84,18 @@ var osmUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{
     osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib}); //Tilelayer
 mymap = new L.Map('map', {layers: [osm], center: new L.LatLng([35.7], [-98]), zoom: 4}); // Creating map
 ```
-
+Creating Hexbins, Adding them to Map, + Applying Options to Hexbins on Map
+```javascript
+var hexLayer = L.hexbinLayer(options).addTo(mymap)
+.hoverHandler(L.HexbinHoverHandler.compound({  //Applying hovering
+				handlers: [
+					L.HexbinHoverHandler.resizeFill(),
+					L.HexbinHoverHandler.tooltip() 
+				]
+			}));
+hexLayer
+  .radiusRange([6, 11])  //Setting range of values of hexagon radii
+	.lng(function(d) { return d[0]; })  //Setting longitude for each hex
+  .lat(function(d) { return d[1]; })  //Setting latitude for each hex
+  .colorValue(function(d) { return d.length; })  //Setting color for each hex
+  .radiusValue(function(d) { return d.length; });  //Setting radius for each hex
