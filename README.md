@@ -33,7 +33,7 @@ Setting Hexagons + Hover/Tooltips
       stroke-width: 5px;
       stroke-opacity: 1;
   	 }
-  	.hexbin-tooltip 
+    .hexbin-tooltip 
       padding: 8px;
       border-radius: 4px;
   	  border: 1px solid black;
