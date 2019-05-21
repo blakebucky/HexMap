@@ -71,4 +71,4 @@ Setting Colors and Range for Hexagons
 var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
 var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
 </script>
-``
+```
