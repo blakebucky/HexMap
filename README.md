@@ -139,7 +139,7 @@ Creating Legend + Assigning Categories/Colors
                    (categories[i] ? categories[i] : '+'));
            }
            div.innerHTML = labels.join('<br>');
-	   div.innerHTML += '<hr><img src="img/Hexagon.svg" alt="hex" style="width:70px;height:70px;"></img><p>Larger Hexagons = Higher Density</p>'
+	   div.innerHTML += '<hr><img src="img/Hexagon.svg" alt="hex" style="width:70px;height:70px;"></img><em>Larger Hexagons = Higher Density</em>'
        return div;
     };
     legend.addTo(mymap);
