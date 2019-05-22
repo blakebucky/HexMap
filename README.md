@@ -81,7 +81,7 @@ Setting Map Center, Tilelayer, + Creating Map
 ```javascript
 var center = [39.8, -98.5]; //Map Center
 var osmUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
-    osmAttrib = '  Map tiles by Carto, under CC BY 3.0. Data by &copy <a href="http://openstreetmap.org/copyright">OpenStreetMap</a>, under ODbL.',
+    osmAttrib = '  Map tiles by Carto, under CC BY 3.0. Data by &copy <a href="http://openstreetmap.org/copyright">OpenStreetMap</a>, under ODbL and <a href="https://data.noaa.gov/dataset/dataset/superfund-sites">NOAA</a>.',
     osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib}); //Tilelayer
 mymap = new L.Map('map', {layers: [osm], center: new L.LatLng([35.7], [-98]), zoom: 4}); // Creating map
 ```
