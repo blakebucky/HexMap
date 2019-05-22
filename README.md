@@ -153,6 +153,6 @@ Creating Info Box
         return this._div;
     };
     info.update = function (props) {
-        this._div.innerHTML = '<h3>U.S. Superfund Site Hexagonal Map</h3>' + '<h4>Superfund sites are locations in the U.S. with extensive </br> environmental contamination that the federal government </br> has designated for cleanup fund allocation.</h4>' + 'Data Source: U.S. Department of Commerce - NOAA'};
+        this._div.innerHTML = '<h3><u>U.S. Superfund Site Hexagonal Map</u></h3>' + '<h4>Superfund sites are locations in the U.S. with extensive </br> environmental contamination that the federal government </br> has designated for cleanup fund allocation.</h4>' + 'Data Source: U.S. Department of Commerce - NOAA'};
     info.addTo(mymap);
 ```
