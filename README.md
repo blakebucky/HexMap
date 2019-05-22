@@ -11,7 +11,7 @@ Map placeholder (HTML)
 ```
   <style> 
     html,
-    body, #map { width: 100%; height: 100%; background: #fff}
+    body, #map { width: 100%; height: 100%}
     i {
       width: 0.5px;
        height: 16px;
