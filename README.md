@@ -68,14 +68,14 @@ Setting Info Box + Legend (End of CSS)
 JavaScript (Leaflet + D3)
 Setting Colors, Range, + Options for Hexagons
 ```javascript
-var colorRange = [ 'yellow', 'orange', 'red', 'blue', 'purple' ];
+var colorRange = [ '#ffffb2', '#fecc5c', '#fd8d3c', '#f03b20', '#bd0026' ];
 var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
 var options = {
-    radius : 12, //Hexagon maximum radius
+    radius : 12,
     opacity: 0.5,
     colorRange: colorRange,
     colorScaleExtent: [1, 5]
-   };
+};
 ```
 Setting Map Center, Tilelayer, + Creating Map
 ```javascript
