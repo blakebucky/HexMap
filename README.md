@@ -1,4 +1,5 @@
 <a href="https://github.com/Asymmetrik/leaflet-d3">Asymmetrik D3.js Hexbin Tutorial</a>
+
 <a href="http://projects.delimited.io/experiments/hexbins/starbucks.html">Example of how to use a CSV file (devtools)</a>
 # Hexagonal Density Map
 
