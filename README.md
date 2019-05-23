@@ -112,13 +112,13 @@ pointData();
 ```
 Creating Function to Generate Legend Colors
 ```javascript
-function getColor(d) {   //Categorical colors; can also create function to assign color based on continuous values
-        return d === 1 ? "yellow" :
-               d === 2 ? "orange" :
-               d === 3 ? "red" :
-               d === 4 ? "blue" :
-               d >= 5 ? "purple":
-                        "purple"
+function getColor(d) {
+        return d === 1 ? "#ffffb2" :
+               d === 2 ? "#fecc5c" :
+               d === 3 ? "#fd8d3c" :
+               d === 4 ? "#f03b20" :
+               d >= 5 ? "#bd0026":
+                        "#bd0026"
                           ;
     }
 ```
