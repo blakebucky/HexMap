@@ -9,7 +9,6 @@
 Map Base Styling (HTML)
 
 ```
-  <style> 
     html,
     body, #map { width: 100%; height: 100%}
     i {
@@ -18,7 +17,6 @@ Map Base Styling (HTML)
        float: right;
        opacity: 0.7;
       }
-  </style>
   
 ```
 Setting Hexagons + Hover/Tooltips (Start of CSS)
