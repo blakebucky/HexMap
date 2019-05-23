@@ -72,7 +72,6 @@ var colorScale = d3.scaleLinear().domain([1,2,3,4,5]).range(colorRange);
 var options = {
     radius : 12, //Hexagon maximum radius
     opacity: 0.5,
-    duration: 500,
     colorRange: colorRange,
     colorScaleExtent: [1, 5]
    };
