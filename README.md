@@ -6,7 +6,7 @@
 
 ##### Styling
 
-Map placeholder (HTML)
+Map Base Styling (HTML)
 
 ```
   <style> 
