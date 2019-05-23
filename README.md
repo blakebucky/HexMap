@@ -105,9 +105,6 @@ Defining Superfund Sites via Longitude/Latitude + Calling Data
 ```javascript
 var pointData = function(){
     var data = [];
-    for(i=0; i<1000; i++){
-        data.push([longFn(),  latFn()]);
-    }
     hexLayer.data([[lat1,lon1]...[latN,lonN]  //Full lat/lon can be found in index file
     ]);
 };
